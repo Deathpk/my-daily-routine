@@ -20,9 +20,7 @@ export async function GET() {
 }
 
 async function getRandomQuote(): Promise<QuoteType> {
-  const response = await fetch("https://stoic-quotes.com/api/quote", {
-    cache: "no-store",
-  });
+  const response = await fetch("https://stoic-quotes.com/api/quote");
 
   const data = await response.json();
 
@@ -31,3 +29,7 @@ async function getRandomQuote(): Promise<QuoteType> {
     author: data.author,
   };
 }
+
+// nextjs api routes default to caching the response
+// this line forces the response to be dynamic
+export const dynamic = "force-dynamic";
