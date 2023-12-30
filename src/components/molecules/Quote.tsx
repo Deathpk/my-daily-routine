@@ -8,23 +8,6 @@ export const Quote: FC = () => {
   const [quote, setQuote] = useState<QuoteType>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    const fetchQuote = async () => {
-      try {
-        const response = await fetch("/api/quote");
-        if (!response.ok) {
-          throw new Error("Error fetching quote");
-        }
-        const data = await response.json();
-        setQuote(data);
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-      }
-    };
-    fetchQuote();
-  }, []);
-
   if (isLoading) {
     return (
       <div className={`p-5 flex flex-col gap-1`}>

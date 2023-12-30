@@ -1,6 +1,6 @@
 import Card from "../atoms/wrappers/Card";
 import { FC } from "react";
-import { Quote } from "../molecules/Quote";
+// import { Quote } from "../molecules/Quote";
 import { Schedule } from "../molecules/Schedule";
 import { TimetableType } from "@/types/ConfigTypes";
 
@@ -9,7 +9,7 @@ export const ScheduleCard: FC<{ timetable: TimetableType }> = (props) => {
     <Card noPadding>
       <div className="pb-6">
         {/* Header */}
-        <Quote />
+        {/* <Quote /> */}
 
         {/* Schedule */}
         <Schedule timetable={props.timetable} />
